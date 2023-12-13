@@ -30,6 +30,14 @@ public class DemoApplication implements CommandLineRunner {
 			user.setRole(Role.admin);
 			user.setPassword(new BCryptPasswordEncoder().encode("admin"));
 			userRepository.save(user);
+		} else {
+			User user = new User();
+
+			user.setEmail("user@gmail.com");
+			user.setNickname("user");
+			user.setRole(Role.user);
+			user.setPassword(new BCryptPasswordEncoder().encode("user"));
+			userRepository.save(user);
 		}
 	}
 }
